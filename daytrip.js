@@ -1,79 +1,109 @@
 "use strict"
 
-console.log("Welcome to The best day trip planner");
-console.log("Randomized Destintation, Restaurant, Transportation, And Entertainment");
-console.log("Completed Day Trip As Of Now");
+console.log("Hello welcome to The best day trip planner");
+
+console.log("Randomized Destintation, Restaurant, Transportation, And Entertainment Planner In One");
+
+console.log("Your Complete Randomized Day Trip");
 
 
 
 
 
-let destintation= ["milwaukee ", "minnesota ", "hawaii ", "thailand"];
-
-function random(myArray){
-    return myArray[Math.floor(Math.random() * myArray.length)]
-    
-}
-console.log(random(destintation));
-
-
-
-let restaurant= ["japanica ", "rodizio", "pho ", "sushi"];
-
-function random(myArray){
-    return myArray[Math.floor(Math.random() * myArray.length)]
-
-}
-console.log(random(restaurant));
-
-
-
+let destintation= ["Milwaukee ", "Minnesota ", "Colorado ", "Chicago"];
+let restaurant= ["Japanica ", "Rodizio", "Phoholic ", "Sushi"];
 let transportation= ["moped ", "lyft ", "bike ", "bus"];
-
-function random(myArray){
-    return myArray[Math.floor(Math.random() *myArray.length)]
-    
-}
-console.log(random(transportation));
-
-
-
 let entertainment= ["karaoke ", "shopping ", "fishing ", "basketball"];
 
-function random(myArray){
-    return myArray[Math.floor(Math.random() *myArray.length)]
+
+
+
+
+function genRandom (myArray){
+    return myArray[Math.floor(Math.random() * myArray.length)]    
+}
+
+
+let destintationRandom= genRandom(destintation);
+console.log(destintationRandom);
+
+
+
+
+
+let restaurantRandom= genRandom(restaurant);
+console.log(restaurantRandom);
+
+
+
+
+
     
-}
-console.log(random(entertainment));
+
+let transportationRandom= genRandom(transportation);
+console.log((transportationRandom));
 
 
 
 
 
-function reChoose(input){
-    let userInput2 = prompt("Do you want to reselect any of your options?")
-console.log('Do you want to reselct any of these options?');
-console.log(userInput2);
-}
+    
 
+let entertainmentRandom= genRandom(entertainment);
+console.log((entertainmentRandom));
+
+
+
+
+let userInput = prompt("Do you want to reselect any of your options? Yes or No");
 
 if (userInput == "yes"){
     while (userInput =="yes"){
-        console.log("you have selected" + reChoose(userInput));
+        console.log("You made a change to " + reChoose());
+        userInput =prompt ("Any other changed you want to make? Yes or No?");
+       
+    }
+}
+else if ( userInput != "no"){
+    console.log("Make it memorable");
+}
+else{
+   userInput = prompt ("Are you satisfied with this?");
+}
+console.log("Have a great time!");
+
+
+
+function reChoose(){
+    let user =prompt( "Is there anything you would like to change?");
+    if (user == "destination"){
+        destintationRandom = genRandom(destintation);
+        return destintationRandom;
+    }
+    else if(user === "restaurant"){
+        restaurantRandom = genRandom(restaurant);
+        return restaurantRandom;
+    }
+    else if (user === "entertainment"){
+        entertainmentRandom =genRandom(entertainment);
+        return entertainmentRandom;
+    }
+    else if (user === "transportation"){
+        transportationRandom = genRandom(transportation);
+        return transportationRandom;
     }
 }
 
-let userInput1 = prompt("Which selection do you want to reselect? destination, restaurant, entertainment, transportation")
-console.log(' Do you want to change anything else?')
-console.log(userInput1);
+console.log(destintationRandom);
+console.log(restaurantRandom);
+console.log(entertainmentRandom);
+console.log(transportationRandom);
+
+console.log ("You are going to",destintationRandom,"have a great time");
+console.log ("For transportation you have chosen to use the good ol", transportationRandom);
+console.log("for some fun in the city you have selected to", entertainmentRandom);
+console.log ("For dinner you will be eating at one of my favorites", restaurantRandom);
 
 
-let userInput3 = prompt("Would you like to change any random selections on your day trip?")
-let reChoose = (transportation)
 
-if (userInput3 == "yes"){
-    while (userInput3 =="yes"){
-        console.log("You have selected" + reChoose(userInput3))
-        userInput3 = prompt (" Would you like to change anything else?")
-    }
-}
+console.log("Have an amazing time :)")
